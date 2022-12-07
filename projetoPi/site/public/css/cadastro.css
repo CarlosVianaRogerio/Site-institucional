@@ -1,0 +1,104 @@
+
+.container2{
+    width: 90vw;
+    height: 70vh;
+    display: flex;
+    margin: auto;
+}
+.containerCadastro{
+    display: flex;
+    height: 70vh;
+    width: 50vw;
+      
+    align-items: center;
+    justify-content: center;
+}
+.containerInput1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 30vw;
+    height: 60vh;
+}
+.containerInput2 {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+
+    width: 30vw;
+    height: 60vh;    
+}
+
+.imgCadastro{
+    margin: auto;
+}
+.imgCadastro img{
+    height: 60vh;
+    width: auto; 
+}
+.container .buttonContinuar{
+    display: flex;
+    font-family: 'Manrope';
+    font-weight: 800;
+
+   
+    color: #ffffff;
+    background-color: #38789D;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    border-radius: 11px; 
+    margin-bottom: 500px;
+    margin: auto;
+}
+.container .buttonContinuar:hover{
+  background-color: #345E77;
+}
+.container3 {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+input{
+    border-radius: 15px;
+    border: none;
+    height: 40px;
+    width: auto;
+    box-shadow: 8px 3px #345E77;
+    margin-bottom: 20px;
+   
+    align-self: center;
+}
+
+input{
+    outline: unset;
+    border: none;
+    padding: 0px 20px;
+}
+
+.title h2{
+    font-family: 'Manrope';
+    font-weight: 800;
+    font-size: 2vw;
+    text-align:center;
+   
+}
+
+input:focus{
+    background-color:#9cc7e0;
+    transition: 1s;}
+::placeholder{
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #000;  
+}
+label{
+    text-align:  center;
+    
+    color: #000;
+}
+
+ 

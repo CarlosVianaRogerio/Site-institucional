@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/Img_Icon_Logo.png"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="css/loginStyle.css" />
+    <link rel="stylesheet" href="css/simuladorStyle.css" />
+    <title>Simulador</title>
+  </head>
+  <body>
+    <section id="primeira" class="container">
+      <div class="containerLogo">
+        <span class="span-logo"
+          ><a href="index.html"><h1>Fleming</h1></a>
+          <img
+            class="img-logo-gota"
+            src="assets/Img-logo-azul.png"
+            alt="logoGotas"
+        /></span>
+      </div>
+      <div class="contSimulador">
+        <div class="title"><h2>Simulador</h2></div>
+        <div class="contInput">
+          <p>Insira a quantidade de comprimidos fabricados</p>
+          <input id="quantidadeComprimidos" type="text" />
+          <p>Insira o tipo do comprimido</p>
+          <select name="" id="tpRemedio">
+            <option value="">Selecione</option>
+            <option value="Oxicodona">Oxicodona</option>
+            <option value="Metadona">Metadona</option>
+            <option value="Hidromorfona">Hidromorfona</option>
+          </select>
+        </div>
+        <div class="calcButton">
+          <button onclick="calc()"><a>Calcule</a></button>
+        </div>
+      </div>
+    </section>
+    <section id="segunda" class="calculadora">
+      <div class="containerLogo">
+        <span class="span-logo"
+          ><a href="index.html"><h1>Fleming</h1></a>
+          <img
+            class="img-logo-gota"
+            src="assets/Img-logo-azul.png"
+            alt="logoGotas"
+        /></span>
+      </div>
+      <div class="contSimulador">
+        <span id="resposta"></span>
+        <div class="calcButton">
+          <a></a>
+          <button><a href="simulador.html">Simular Novamente</a></button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    function calc() {
+      var qtdComprimidos = Number(quantidadeComprimidos.value);
+      var perdidos = qtdComprimidos * 0.15;
+      var remedio = tpRemedio.value;
+      var cusProducao = 0;
+      var X = 0.38;
+      var Y = 0.46;
+      var Z = 0.67;
+      var perdas = 0;
+
+      if (qtdComprimidos == 0 || remedio == "") {
+        alert("Preencha todos os campos");
+      } else {
+        document.getElementById("primeira").style.display = "none";
+        document.getElementById("segunda").style.display = "block";
+
+        if (remedio == "Oxicodona") {
+          cusProducao = X * qtdComprimidos;
+          perdas = perdidos * X;
+        } else if (remedio == "Metadona") {
+          cusProducao = Y * qtdComprimidos;
+          perdas = perdidos * Y;
+        } else if (remedio == "Hidromorfona") {
+          cusProducao = Z * qtdComprimidos;
+          perdas = perdidos * Z;
+        }
+
+        resposta.innerHTML = `
+    Para atingir sua meta você está gastando : R$${cusProducao.toFixed(
+      2
+    )}</b> <br> 
+   <br> A quantidade de comprimidos perdidos é: ${perdidos.toFixed(0)}</b> <br>
+    <br>Logo sua perda monetaria está sendo de : R$${perdas.toFixed(
+      2
+    )}</b><br>    
+    `;
+      }
+    }
+  </script>
+</html>

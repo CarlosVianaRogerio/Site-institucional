@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashBoard.css".css>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashNova.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/funcoes.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="container">
+          <span class="span-logo"
+            ><h1>Fleming</h1>
+            <img
+              class="img-logo-gota"
+              src="assets/Img_Icon_Logo.png"
+              alt="logoGotas"
+          /></span>
+  
+          <ul class="navbar">
+            <li>
+              <a href="#">Laboratórios</a>
+              <ul class="subMenu">
+                <li><a href="dashBoardLabnova_user.html">Laboratório01</a></li>
+                <li><a href="dashBoardLabnova_user.html">Laboratório02</a></li>
+                <li><a href="dashBoardLabnova_user.html">Laboratório03</a></li>
+                <li><a href="dashBoardLabnova_user.html">Laboratório04</a></li>
+                <li><a href="dashBoardLabnova_user.html">Laboratório05</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="dashBoardnova.html" style="color: black">Home </a>
+            </li>
+  
+            <a href="#">
+              <a href="#" id="nome_user"> Olá, Usuário</a>
+              <li>
+                <img src="assets/Img_User.svg" alt="" />
+                <ul>
+                  <li>
+                    <a href="https://app.pipefy.com/public/form/VUNJN1lE" style="font-size: 0.7vw; padding: 5px"
+                      >Solicitar chamado</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" onclick="limparSessao()" style="font-size: 0.7vw; padding: 5px"
+                      ><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a
+                    >
+                  </li>
+                </ul>
+              </li></a
+            >
+          </ul>
+        </nav>
+      </header>
+      <section class="dashNova">
+        <div class="legendas">
+          <div class="caixaLegenda">
+            <div class="textoLegenda">
+               <span>Legendas</span>
+            </div>
+          </div>
+          <div class="container">
+            <div class="legenda1">
+             <span>Crítico</span>
+             <span>Baixa Umidade</span>
+             <img class='imgs' src="assets/dashnova/TermoVermelho" alt="">
+             <span>40%</span>
+            </div>
+            <div class="legenda2">
+              <span>Alerta</span>
+             <span>Baixa Umidade</span>
+             <img class='imgs' src="assets/dashnova/TermoLaranja.svg" alt="">
+             <span>43%</span>
+            </div>
+            <div class="legenda3">
+              <span>Aceitável</span>
+              <img class='imgs' id="aceitavel" src="assets/dashnova/TermoVerde.svg" alt="">
+              <span>46% - 59%</span>
+            </div>
+            <div class="legenda4">
+              <span>Alerta</span>
+             <span>Alta Umidade</span>
+             <img class='imgs' src="assets/dashnova/TermoAzulClaro.svg" alt="">
+             <span>62%</span>
+            </div>
+            <div class="legenda5">
+              <span>Crítico</span>
+             <span>Alta Umidade</span>
+             <img class='imgs' src="assets/dashnova/TermoAzul.svg" alt="">
+             <span>65%</span>
+            </div>
+          </div>
+        </div>
+        <div class="alerta">
+          <div class="caixaLegenda">
+            <div class="textoLegenda">
+               <span>Alertas e Gráficos</span>
+            </div>
+          </div>
+
+          <div class="containerAlerta">
+            <div class="container1e2">
+              <div class="alerta1">
+                <h2>Laboratórios</h2>
+                <span>Críticos</span>
+                <span>Baixa Umidade</span>
+                <img class="imgs2" src="assets/dashnova/TermoVermelho" alt="">
+                <p>Lab 1 | Lab 2</p>
+              </div>
+              <div class="alerta2">
+                <h2>Laboratórios</h2>
+                <span>Alerta</span>
+                <span>Baixa Umidade</span>
+                <img class="imgs2" src="assets/dashnova/TermoLaranja.svg" alt="">
+                <p>Lab 4 | Lab 3</p>
+              </div>
+            </div>
+
+            <div class="container3e4">
+              <div class="alerta3">
+                <h2>Laboratórios</h2>
+                <span>Alerta</span>
+                <span>Alta Umidade</span>
+                <img class="imgs2" src="assets/dashnova/TermoAzulClaro.svg" alt="">
+                <p>Lab 6 | Lab 7</p>
+              </div>
+              <div class="alerta4">
+                <h2>Laboratórios</h2>
+                <span>Críticos</span>
+                <span>Alta Umidade</span>
+                <img class="imgs2" src="assets/dashnova/TermoAzul.svg" alt="">
+                <p>Nenhum Lab</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="containerGraficos">
+          <div class="grafico">
+            <div
+              class="chart-container"
+              style="position: relative; height: 35vh; width: 35vw">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+          <div class="grafico">
+            <div
+              class="chart-container"
+              style="position: relative; height: 35vh; width: 35vw">
+              <canvas id="myChart2"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="legendaFinal">
+        <div class="final1">
+        <p>Indicativos de perdas por tempo(minutos):</p>
+        <span>Até 60: Perdas pouco Significativas</span>
+        <span>De 60 a 180: Perdas Significativas</span>
+        <span>Acima de 180: Perdas Críticas</span>
+      </div>
+        <div class="final2">
+          <p>Criticidade da quantidade de alertas</p>
+          <span>Até 6: Aceitável</span>
+          <span>De 6 a 8: Emergência</span>
+          <span>Acima de 8: Crítico</span>
+        </div>
+      </div>
+    </section>
+  
+  </body>
+  <script>
+    nome_user.innerHTML = `Olá, ` + sessionStorage.NOME_USUARIO;
+    const labels = [
+      "Laboratório 02",
+      "Laboratório 03",
+      "Laboratório 04",
+      "Laboratório 05",
+    ];
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Tempo em que o laboratório ficou em alerta (min)",
+          data: [30, 60, 20, 15],
+          backgroundColor: ["rgba(66, 120, 152, 0.6)"],
+          borderColor: ["rgb(66, 120, 152)"],
+          borderWidth: 1,
+        },
+      ],
+    };
+
+    const config = {
+      type: "bar",
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    const myChart = new Chart(document.getElementById("myChart"), config);
+  </script>
+  <script>
+    const labels2 = [
+      "Laboratório 01",
+      "Laboratório 02",
+      "Laboratório 03",
+      "Laboratório 04",
+      "Laboratório 05",
+    ];
+    const data2 = {
+      labels: labels2,
+      datasets: [
+        {
+          label: "Frequência de alertas por laboratório (período de 7 dias)",
+          data: [1, 2, 6, 2, 4],
+          backgroundColor: ["rgb(65, 135, 139)"],
+          borderColor: ["rgb(65, 135, 139)"],
+          borderWidth: 1,
+        },
+      ],
+    };
+
+    const config2 = {
+      type: "bar",
+      data: data2,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    };
+  </script>
+  <script>
+    const myChart2 = new Chart(document.getElementById("myChart2"), config2);
+  </script>
+  
+</body>
+</html>

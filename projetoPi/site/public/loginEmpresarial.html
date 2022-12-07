@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="shortcut icon" href="assets/Img_Icon_Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/loginStyle.css" />
+    <script src="script/modal.js"></script>
+    <script src="js/funcoes.js"></script>
+    <title>Fleming</title>
+  </head>
+  <body>
+    <div class="containerLogo">
+      <span class="span-logo"
+          ><a href="index.html"><h1>Fleming</h1></a>
+          <img
+            class="img-logo-gota"
+            src="assets/Img-logo-azul.png"
+            alt="logoGotas"
+        /></span>
+    </div>
+    <section class="sectionLogin">
+      <div class="containerLogin">
+        <div class="containerImgLogin">
+          <img src="assets/Img_Login.svg" alt="Imagem de Login" />
+        </div>
+        <div class="containerTextLogin">
+          
+          <div><h2>Login Empresarial</h2></div>
+          <div class="containerInput">
+            <label for="">E-mail</label>
+            <input placeholder="Digite o e-mail cadastrado" type="email" class="input1 " id="email_input"/>
+            <label for="">Senha</label>
+            <input type="password" placeholder="*********"  id="senha_input"/>
+          </div>
+          <div class="buttonLogin" onclick="entrar()"><a href="#" id="conectar">Conectar</a></div>
+          <p>Não é nosso cliente?<span class="linkCadastro" onclick="acao()"><a href="#"> Clique aqui</a></span></p>
+
+          <div id="div_aguardar" class="loading-div">
+                    <img src="assets/loding.gif" id="loading-gif">
+          </div>
+
+          <div id="div_erros_login"></div>
+          <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal">
+          <div onclick="fechar()" class="fechar">
+            <img src="assets/Img_close.svg" alt="" />
+          </div>
+          <div class="containerModal">
+            <div class="contatoArea">
+              <span>Informe o nome para contato:</span>
+              <input type="text" id="input_nome" >
+              <span>Informe o email para contato:</span>
+              <input type="email" id="input_email">
+              <span>Informe as principais duvidas para melhorar o contato:</span>
+              <textarea name="" id="input_pergunta" cols="50" rows="6"></textarea>
+              <div onclick="enviar()" class="fechar"><span>Enviar</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        
+    </section>
+  </body>
+</html>
+<script>
+    function enviar(params) {
+     
+
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var mensagemVar = input_pergunta.value
+
+
+        fetch("/usuarios/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                mensagemServer: mensagemVar
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                console.log(resposta);
+              setTimeout(function () {
+                        fechar();
+                    }, 100);
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o inserir!");
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+  }
+   function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idCliente;
+
+                    setTimeout(function () {
+                        window.location = "dashBoardnova.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>

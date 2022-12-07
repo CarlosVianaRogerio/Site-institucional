@@ -1,0 +1,142 @@
+.title2{
+    font-size: 1.5vw;
+}
+.kpis .kpi{
+    height: 45vh;
+}
+
+.imgKPI img {
+    width: auto;
+    height: 12vh;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/*Modal*/
+.modal {
+
+    width: 95vw;
+    height: 70vh;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animate;
+    animation-duration: 800ms;
+}
+.containerModal{
+    width: 95vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerModal .imgSalas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.containerModal .imgSalas img{
+    width: auto;
+    height: 65vh;
+}
+@keyframes animate {
+    
+    from {
+        opacity: 1;
+    }
+
+    from {
+        opacity: 0;
+    }
+}
+
+
+.fechar {
+
+    width: auto;
+    height: 10vh;
+    float: right;
+    cursor: pointer;
+    padding: 10px;
+}
+.fechar img{
+    width: auto;
+    height: 2.5vh;
+}
+
+
+.containerGraficosSala{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+.containerGraficosSala .cardGraficos{
+    width: 50vw;
+    height: 17vh;
+    
+    background-color: #345E77;
+    border-radius: 30px;
+
+    margin-bottom: 30px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titleGraf{
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1vw;
+        color: #fff;
+        margin-top: 10px;
+}
+
+.cont-graf{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.containerGrafico{
+    width: auto;
+    height: 80vh;
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.containerGrafico .container-Graf{
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    
+   
+}
+.chart-container{
+    background-color: #deeaf1;
+    border: solid 1px #345E77;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+}
+.section-container1{
+    height: 100vh;
+}
+
+.cont-graf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

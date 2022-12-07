@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+.container {
+    display: block;
+}
+
+.contSimulador {
+    display: flex;
+    background-color: #0B3C58;
+    width: 30vw;
+    height: 80vh;
+
+    margin: auto;
+    justify-self: center;
+    flex-direction: column;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 31px;
+}
+
+.contSimulador .title {
+    align-self: center;
+    justify-self: center;
+
+    font-family: 'Manrope';
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.5vw;
+    padding: 30px;
+}
+
+.contSimulador .contInput {
+    width: auto;
+    height: auto;
+    margin-top: 0px;
+    outline: unset;
+    border: none;
+
+
+}
+
+.contSimulador .contInput p {
+    padding: 27px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2vw;
+    padding: 30px;
+
+
+}
+
+.contSimulador .contInput select,
+input {
+    margin-left: 27px;
+    outline: unset;
+    overflow: hidden;
+
+    border: none;
+    border-radius: 15px;
+    border: none;
+    width: 20vw;
+    height: 5.4vh;
+
+    font-family: 'Manrope';
+    font-weight: 500;
+    font-size: 1vw;
+    padding: 0px 10px;
+    color: #000;
+
+
+}
+
+.contSimulador .calcButton {
+    margin: auto;
+    padding: 30px;
+}
+
+.contSimulador .calcButton button {
+    padding: 1vw 3.5vw;
+    outline: unset;
+    border: none;
+    background-color: #38789D;
+    border-radius: 11.6px;
+
+    font-family: 'Manrope';
+    color: #fff;
+    font-weight: 700;
+    font-size: 1vw;
+}
+
+input:focus {
+    background-color: #9cc7e0;
+    transition: 1s;
+}
+
+select:focus {
+    background-color: #9cc7e0;
+    transition: 1s;
+}
+
+option {
+    background-color: #fff;
+}
+
+
+::placeholder {
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #000;
+}
+
+.calculadora {
+    display: none;
+}
+
+
+#resposta {
+    font-family: 'Roboto';
+
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #fff;
+    padding: 20px;
+    margin: auto;
+
+
+}

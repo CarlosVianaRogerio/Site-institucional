@@ -1,0 +1,257 @@
+/*Importando o tipo de font das Letras*/
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap');
+
+/*Resetando Padrões*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+body {
+    background-color: #E8F1F2;
+}
+
+.sectionLogin{
+    display: flex;
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLogin{
+    display: flex;
+    width: 90%;
+    height: auto;
+   justify-content: space-between;
+    
+}
+.containerImgLogin{
+    width: auto;
+}
+.containerImgLogin img{
+    height: auto;
+    width: 35vw;
+}
+
+.containerTextLogin{
+    display: flex;
+    width: 28vw;
+    height: 560px;
+    
+    background-color: #38789D;
+    border-radius: 23px;
+    align-items: center;
+   
+    flex-direction: column;
+    border: #0B3C58 2px solid;
+}
+.containerTextLogin h2{
+    font-family: 'Manrope';
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 10px;
+    
+        color: #FFFFFF;
+}
+/*Inputs*/
+.containerInput{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 416px;
+    height: 300px;
+    
+}
+.containerInput input{
+    outline: unset;
+    border: none;
+
+    width: 19vw;
+    height: 38px;
+    border-radius: 4px;
+    padding: 20px;
+
+    font-family: 'Manrope';
+    font-weight: 500;
+    color: #0B3C58;
+    
+}
+.containerInput input:focus{
+    background-color: #E8F1F2;
+}
+label{
+    font-family: 'Manrope';
+    font-weight: 700;
+    color: #FFFFFF;
+
+    margin-bottom: 10px;
+}
+.containerInput .input1{
+    margin-bottom: 45px;
+}
+.buttonLogin{
+    display: flex;
+
+    font-family: 'Manrope';
+    font-weight: 800;
+    color: #FFFFFF;
+
+    width: 12vw;
+    height: 48px;
+
+    background-color:#0B3C58;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+.buttonLogin:hover{
+    background-color:#345E77;
+    transition: 1s;
+    
+}
+.containerLogo{
+    width: 80%;
+    margin: auto;
+}
+.span-logo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; 
+}
+.span-logo .img-logo-gota{
+    width: auto;
+    height: 4vh;
+}
+
+h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #326F92;
+}
+
+.cadastro {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 0.99vw;
+    color: #E8F1F2;
+}
+p{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 0.70vw;
+    color: #FFFFFF;
+}
+.linkCadastro:hover{
+    color:aqua;
+}
+/*Modal area*/
+.modal {
+
+    width: 50vw;
+    height: 60vh;
+    background-color: #cde2e2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animate;
+    animation-duration: 800ms;
+    border: solid 2px #0B3C58;
+    border-radius: 8px;
+    
+}
+.containerModal{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.containerModal .contatoArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.containerModal .contatoArea span {
+    color: #0B3C58;
+    display: flex;
+    font-size: 3ch;
+    height: 3ch;
+   
+}
+.containerModal .contatoArea input{
+    height: 2vw;
+    width: 30vh;
+    text-align: center;
+}
+
+@keyframes animate {
+    
+    from {
+        opacity: 1;
+    }
+
+    from {
+        opacity: 0;
+    }
+}
+
+
+.fechar {
+
+    width: auto;
+    height: 10vh;
+    float: right;
+    cursor: pointer;
+    padding: 10px;
+}
+.fechar img{
+    width: auto;
+    height: 2.5vh;
+}
+
+.loading-div{
+    
+   
+    height: 35px;
+    width: auto;
+    margin-top: 20px;
+    display: none;
+    justify-content: center;
+}
+.loading-div img{
+    width: 30%;
+    margin: auto;
+}
+#div_erros_login{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 300;
+    font-size: 0.70vw;
+    color: #FFFFFF;
+}
+.alerta_erro{
+    font-family: 'Manrope', sans-serif;
+        font-weight: 300;
+        font-size: 0.70vw;
+        color: #FFFFFF;
+}

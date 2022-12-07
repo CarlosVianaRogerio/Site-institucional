@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+.navbar {
+    width: 40%;
+}
+header{
+    height: 80px;
+    
+}
+header li img{
+    width: 3.2vw;
+    height: auto;
+    
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+nav ul ul li{
+    margin-top: 5px;
+}
+nav ul  li:hover ul{
+    display: block;
+    background-color: #326F92;
+    border-radius: 2px;
+    transition: 1s ease-in-out;
+}
+nav ul ul a:hover{
+    color: rgb(167, 167, 167);
+}
+nav ul ul {
+    width: 7vw;
+    height: auto;
+    
+}
+nav ul ul li a{
+    display: block;
+    text-align: center;
+    font-size: 0.9vw;
+
+}
+.padrao {
+    background-color: #345E77;
+    border-radius: 13.43px;
+    
+}
+
+
+.containerDash {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerKPI {
+    width: 90vw;
+    height: 90vh;
+    height: auto;
+    display: flex;
+    margin-top: 50px;
+}
+
+.containerKPI .legenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerKPI .legenda .legendaAlertas {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.legendaAlertas .legendaAler {
+    width: 16vw;
+    height: 13vh;
+    margin-right: 5px;
+}
+
+.containerKPI .legenda .legendaGrafico {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.legendaGrafico .legendasGra {
+    width: 24vw;
+    height: 18vh;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.kpis {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.kpis .kpi {
+    width: 20.5vw;
+    height: 33.3vh;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kpi .containerKPI2{
+    width: 20vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imgKPI{
+    align-self: center;
+    justify-self: center;
+    width: auto;
+    height: auto;
+}
+.imgKPI img{
+    width: auto;
+    height: 10vh;
+}
+
+.containerGraficos {
+    width: auto;
+    display: flex;
+    
+}
+.grafico{
+    border: #326F92 solid 3px;
+}
+.containerGraficos .grafico {
+    width: 40vw;
+    height: 40vh;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    background-color: #deeaf1;
+    border: solid 2px #345E77;
+    border-radius: 9px;
+   
+    justify-content: center;
+    
+}
+.chart-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+   
+}
+#myChart2{
+    margin: solid 3px #345e77;
+}
+.textAler{
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1vw;
+        color: #fff;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.title{
+    font-family: 'Roboto';
+        font-weight: 800;
+        font-size: 1.2vw;
+        color: #fff;
+        text-align: center;
+        margin-top: 5px;
+}
+.textLegenda{
+    font-family: 'Roboto';
+        font-weight: 800;
+        font-size: 1vw;
+        color: #fff;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+}
+.textLegenda2 {
+    font-size: 1.1vw;
+}
+
+.textAler{
+    width: 10vw;
+    height: auto;
+   
+}
+.imgAler{
+    width: 4vw;
+    height: auto;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgAler img{
+    height: 8vh;
+    width: auto;
+}
+.card{
+    width: 16vw;
+    height: 13vh;  
+    display: flex; 
+}
